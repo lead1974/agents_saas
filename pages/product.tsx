@@ -36,7 +36,8 @@ function ConsultationForm() {
         const controller = new AbortController();
         let buffer = '';
 
-        await fetchEventSource('/api', {
+        // New (AWS):
+        await fetchEventSource('/api/consultation', {
             signal: controller.signal,
             method: 'POST',
             headers: {
